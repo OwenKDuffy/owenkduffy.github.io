@@ -1,61 +1,62 @@
-// var api = 'https://api.coindesk.com/v1/bpi/historical/close.json?start=2017-12-31&end=2018-04-01';
-// document.addEventListener("DOMContentLoaded", function(event) {
-//   fetch(api)
-//   .then(function(response) { return response.json(); })
-//   .then(function(data) {
-//     var parsedData = parseData(data)
-//     drawChart(parsedData);
-//   })
-// });
-var json = readTextFile("/Users/Documents/workspace/test.json", function(text){
-    var data = JSON.parse(text);
-    console.log(data);
-});
-console.log(json);
-var parsedData = parseData(values);
-drawChart(parsedData);
+var api = 'https://api.github.com/repos/PyGithub/PyGithub/stats/participation';
+document.addEventListener("DOMContentLoaded", function(event) {
+  fetch(api)
+  .then(function(response) { return response.json(); })
+  .then(function(data) {
 
-function readTextFile(file, callback) {
-    var rawFile = new XMLHttpRequest();
-    rawFile.overrideMimeType("application/json");
-    rawFile.open("GET", file, true);
-    rawFile.onreadystatechange = function() {
-        if (rawFile.readyState === 4 && rawFile.status == "200") {
-            callback(rawFile.responseText);
-        }
-    }
-    rawFile.send(null);
-}
+    var parsedData = parseData(data);
+    drawChart(parsedData);
+  })
+});
+// var json = new Array();
+// loadData();
+// console.log(json);
+// var parsedData = parseData(values);
+// drawChart(parsedData);
+//
+// function loadData() {
+//   $.getJSON('https://api.github.com/repos/PyGithub/PyGithub/stats/participation', function (data) {
+//     json = data.all;
+//   }).error(function(){
+//     console.log('error: json not loaded');
+//   }).done(function() {
+//     console.log(json);
+//     var parsedData = parseData(values);
+//     drawChart(parsedData);
+//   });
+// }
+
 
 //usage:
 
 function parseData(data) {
+  console.log(data);
   var arr = [];
   var x = 0;
-  for (var i in data)
+  for (var i in data.all)
   {
     arr.push(
       {
         week: x,
-        value: i
+        value: +data.all[i]
       });
       x += 1;
     }
     return arr;
 
-  // for (var i in data.bpi) {
-  //   arr.push(
-  //     {
-  //       date: new Date(i), //date
-  //       value: +data.bpi[i] //convert string to number
-  //     });
-  //   }
-  //   return arr;
+    // for (var i in data.bpi) {
+    //   arr.push(
+    //     {
+    //       date: new Date(i), //date
+    //       value: +data.bpi[i] //convert string to number
+    //     });
+    //   }
+    //   return arr;
   }
 
   function drawChart(data) {
     console.log(data);
-    var svgWidth = 600, svgHeight = 400;
+    var svgWidth = 1200, svgHeight = 600;
     var margin = { top: 20, right: 20, bottom: 30, left: 50 };
     var width = svgWidth - margin.left - margin.right;
     var height = svgHeight - margin.top - margin.bottom;
@@ -67,7 +68,7 @@ function parseData(data) {
     .attr("transform",
     "translate(" + margin.left + "," + margin.top + ")"
   );
-  var x = d3.scaleTime().rangeRound([0, width]);
+  var x = d3.scaleLinear().rangeRound([0, width]);
   var y = d3.scaleLinear().rangeRound([height, 0]);
   var line = d3.line()
   .x(function(d) { return x(d.week)})
@@ -91,7 +92,7 @@ function parseData(data) {
   g.append("path")
   .datum(data)
   .attr("fill", "none")
-  .attr("stroke", "steelblue")
+  .attr("stroke", "red")
   .attr("stroke-linejoin", "round")
   .attr("stroke-linecap", "round")
   .attr("stroke-width", 1.5)
