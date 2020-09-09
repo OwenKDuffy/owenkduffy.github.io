@@ -1,27 +1,88 @@
-
-.line {
-  stroke: blue;
-  fill:none;
-  stroke-width: 3;
+  body {
+    text-align: center;
+    background-color: #FFEFD3;
+    /* width: 85%; */
+    height: 100%;
+    /* margin: 40px auto; */
+    /* max-width:650px; */
+    line-height:1.6;
+    font-size:18px;
+    color:#363537;
+    padding:0;
+}
+h1,h2,h3 {
+    line-height: 1.2
 }
 
-.axis path,
-.axis line {
-  fill: none;
-  stroke: black;
-  shape-rendering: crispEdges;
+.projects-carousel{
+    display: inline-grid;
+    grid-template-columns: auto auto;
+    position: relative;
+    border: 1px solid #7E846Baa;
+    padding: 25px;
+    /*
+    margin: 0 auto; */
+}
+.project-thumbnail{
+    /* display: inline-block;
+    position: relative;
+    float:top;
+    height: 100%; */
+    /* width: 30%; */
+    border: 1px solid #7E846Baa;
+    padding: 20px;
+    /* max-width: 300px;
+    /* margin: 0 auto; */
+}
+/*
+
+.rules{
+    padding: 20px 50px;
+}
+.rules form{
+    padding: 20px 0px;
 }
 
-.axis text {
-  font-size: 10px;
-  font-family: sans-serif;
+.rules input{
+    float:right;
+    width:100%;
+    font-size: 18px;
 }
 
-.text-label {
-  font-size: 10px;
-  font-family: sans-serif;
+*/
+img{
+    position: relative;
+    width: 80%;
+    border: 8px solid #7E846Baa;
 }
-.line-chart
-{
-  border: 1px solid lightgray;
+.sidebar {
+    max-width: 20%;
+    position: fixed;
+    float: left;
+    height: 100%;
+    padding: 10px;
+    top: 0;
+    left: 0;
+    display: block;
+    background-color: #363537;
+    color: #FFEFD3;
+}
+
+.main {
+    margin-left: 25%;
+    display: block;
+    /* float: right; */
+ }
+#profilePic{
+    float:left;
+    border-radius: 50%;
+    display: block;
+    margin: 15px;
+}
+.sidebar a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #FFEFD3;
+  display: block;
 }
