@@ -1,10 +1,7 @@
   body {
     text-align: center;
     background-color: #FFEFD3;
-    /* width: 85%; */
     height: 100%;
-    /* margin: 40px auto; */
-    /* max-width:650px; */
     line-height:1.6;
     font-size:18px;
     color:#363537;
@@ -18,38 +15,12 @@ h1,h2,h3 {
     display: inline-grid;
     grid-template-columns: auto auto;
     position: relative;
-    border: 1px solid #7E846Baa;
     padding: 25px;
-    /*
-    margin: 0 auto; */
 }
 .project-thumbnail{
-    /* display: inline-block;
-    position: relative;
-    float:top;
-    height: 100%; */
-    /* width: 30%; */
     border: 1px solid #7E846Baa;
     padding: 20px;
-    /* max-width: 300px;
-    /* margin: 0 auto; */
 }
-/*
-
-.rules{
-    padding: 20px 50px;
-}
-.rules form{
-    padding: 20px 0px;
-}
-
-.rules input{
-    float:right;
-    width:100%;
-    font-size: 18px;
-}
-
-*/
 img{
     position: relative;
     width: 80%;
@@ -78,6 +49,11 @@ img{
     border-radius: 50%;
     display: block;
     margin: 15px;
+}
+#hitsCount {
+    padding: 6px 8px 6px 16px;
+    width: auto;
+    border: none;
 }
 .sidebar a {
   padding: 6px 8px 6px 16px;
