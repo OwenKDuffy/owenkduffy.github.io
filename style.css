@@ -1,4 +1,4 @@
-  body {
+body {
     text-align: center;
     background-color: #FFEFD3;
     height: 100%;
@@ -10,16 +10,36 @@
 h1,h2,h3 {
     line-height: 1.2
 }
+h1 {
+    font-size: 4em;
+    text-decoration: underline;
+}
 
 .projects-carousel{
     display: inline-grid;
     grid-template-columns: auto auto;
+    grid-gap: 25px;
     position: relative;
     padding: 25px;
 }
 .project-thumbnail{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     border: 1px solid #7E846Baa;
     padding: 20px;
+    border-radius: 20px;
+    background-color: #363537;
+    color: #FFEFD3;
+}
+.project-thumbnail a{
+    color: #7E846Baa;
+    font-style: italic;
+    font-size: 22px;
+}
+.project-thumbnail h2{
+    font-style: italic;
+    text-decoration: underline;
 }
 img{
     position: relative;
@@ -43,7 +63,7 @@ img{
     margin-left: 25%;
     display: block;
     /* float: right; */
- }
+}
 #profilePic{
     float:left;
     border-radius: 50%;
@@ -56,9 +76,13 @@ img{
     border: none;
 }
 .sidebar a {
-  padding: 6px 8px 6px 16px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #FFEFD3;
-  display: block;
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #FFEFD3;
+    display: block;
+    border-top: 3px solid #FFEFD3;
+}
+.sidebar a:last-of-type{
+    border-bottom: 3px solid #FFEFD3;
 }
